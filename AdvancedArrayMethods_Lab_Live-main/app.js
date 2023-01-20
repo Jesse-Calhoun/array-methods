@@ -156,7 +156,7 @@ console.log('vegetarianFood from filterVegetarian', vegetarianFood)
 //Filter
 
 function userFavoriteCuisine(){
-    let favoriteTypeOfFood = prompt('What is your favorite cuisine?')
+    let favoriteTypeOfFood = prompt('What is your favorite cuisine?');
     let results = dishes.filter(function(dish){
         if (dish.cuisine === favoriteTypeOfFood){
             return true;
@@ -236,9 +236,18 @@ console.log('hasChickpea from includesChickpea', hasChickpea);
 //Filter
 
 function includesUserIngredient(){
-    res
+    let newArray = [];
+    let response = prompt('What ingredient would you like your dish to include?').toLowerCase();
+    let results = dishes.filter(function(dish){
+        if (dish.ingredients.includes(response)){
+            newArray.push(dish)
+        }
+    })
+    return newArray
 }
 
+let userDishes = includesUserIngredient();
+console.log('userDishes from includesUserIngredient', userDishes)
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
