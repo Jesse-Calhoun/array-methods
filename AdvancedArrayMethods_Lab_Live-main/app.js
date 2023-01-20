@@ -166,7 +166,7 @@ function userFavoriteCuisine(){
 }
 
 let favoriteCuisineDishes = userFavoriteCuisine();
-console.log('favoriteCuisineDishes from userFavoriteCuisine', favoriteCuisineDishes);
+console.log('favoriteCuisineDishes from userFavoriteCuisine', favoriteCuisineDishes)
 
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
@@ -213,7 +213,7 @@ function filterEvenCountDishes(){
 
 
 let evenCountDishes = filterEvenCountDishes();
-console.log('evenCountDishes from filterEvenCountDishes', evenCountDishes);
+console.log('evenCountDishes from filterEvenCountDishes', evenCountDishes)
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
@@ -230,7 +230,7 @@ function includesChickpea(){
 }
 
 let hasChickpea = includesChickpea();
-console.log('hasChickpea from includesChickpea', hasChickpea);
+console.log('hasChickpea from includesChickpea', hasChickpea)
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
@@ -240,10 +240,10 @@ function includesUserIngredient(){
     let response = prompt('What ingredient would you like your dish to include?').toLowerCase();
     let results = dishes.filter(function(dish){
         if (dish.ingredients.includes(response)){
-            newArray.push(dish)
+            newArray.push(dish);
         }
     })
-    return newArray
+    return newArray;
 }
 
 let userDishes = includesUserIngredient();
@@ -252,18 +252,46 @@ console.log('userDishes from includesUserIngredient', userDishes)
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
 
+function getCuisineTypes(){
+    let newArray = [];
+    let results = dishes.map(function(dish){
+        newArray.push(dish.cuisine);
+    }
+    )
+    return newArray;
+}
 
+let cuisineTypes = getCuisineTypes();
+console.log('cuisineTypes from getCuisineTypes', cuisineTypes)
 
 //9. Create a function that will return an array of strings, with the cuisine type appended to the start of the dish's name. Ie, ["Italian Pizza", "Italian Spaghetti", ...]
 //Map 
 
+function combineCuisineTypeAndName(){
+    let newArray = [];
+    let results = dishes.map(function(dish){
+        newArray.push(dish.name + ' ' + dish.cuisine);
+    })
+    return newArray;
+}
 
+let combinedCuisineAndNames = combineCuisineTypeAndName();
+console.log('combinedCuisineAndNames from combineCuisineTypeAndName', combinedCuisineAndNames)
 
 //10. Create a function that will use advanced array methods on the 'dishes' array and return the result ["Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"]
 
+function combineVegetarianAndName(){
+    let newArray = [];
+    let results = dishes.map(function(dish){
+        if (dish.cuisine === 'Vegetarian'){
+            newArray.push(dish.cuisine + ' ' + dish.name);
+        }
+    })
+    return newArray
+}
 
-
-
+let combinedVegetarianAndName = combineVegetarianAndName();
+console.log('combinedVegetarianAndName from combineVegetarianAndName', combinedVegetarianAndName)
 
 //BONUS
 
