@@ -140,10 +140,8 @@ function filterExample(){
 //Filter
 
 function filterVegetarian(){
-
     let results;
     results = dishes.filter(function(dish){
-        console.log('el inside problemOne', dish)
         if (dish.cuisine === 'Vegetarian'){
             return true;
         }
@@ -153,7 +151,7 @@ function filterVegetarian(){
 }
 
 let vegetarianFood = filterVegetarian();
-console.log('vegetarianFood from problemOne', vegetarianFood)
+console.log('vegetarianFood from filterVegetarian', vegetarianFood)
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
@@ -164,14 +162,34 @@ console.log('vegetarianFood from problemOne', vegetarianFood)
 //Filter
 
 function filterLargeItalian (){
-    
+    let results;
+    results = dishes.filter(function(dish){
+        if (dish.cuisine === 'Italian' & dish.servings > 5){
+            return true;
+        }
+    })
+    return results;
 }
+
+let largeItalianDishes = filterLargeItalian();
+console.log('largeItalianDishes from filterLargeItalian', largeItalianDishes)
 
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
 
+function filterIdServingMatches (){
+    let results;
+    results = dishes.filter(function(dish){
+        if (dish.id === dish.servings){
+            return true
+        }
+    })
+    return results;
+}
 
+let idServingMatchDishes = filterIdServingMatches();
+console.log('idServingMatchDishes from filterIdServingMatches', idServingMatchDishes)
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
