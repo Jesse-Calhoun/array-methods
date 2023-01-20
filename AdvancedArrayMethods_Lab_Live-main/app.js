@@ -220,15 +220,24 @@ console.log('evenCountDishes from filterEvenCountDishes', evenCountDishes);
 //Double Hint: Research 'javascript does array include item'
 //Filter
 
-// function includesChickpea(){
-//     let results;
-//     results = 
-// }
+function includesChickpea(){
+    let results = dishes.filter(function(dish){
+        if (dish.ingredients.includes('chickpea')){
+            return true;
+        }
+    })
+    return results;
+}
 
+let hasChickpea = includesChickpea();
+console.log('hasChickpea from includesChickpea', hasChickpea);
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
 
+function includesUserIngredient(){
+    res
+}
 
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
