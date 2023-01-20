@@ -140,8 +140,7 @@ function filterExample(){
 //Filter
 
 function filterVegetarian(){
-    let results;
-    results = dishes.filter(function(dish){
+    let results= dishes.filter(function(dish){
         if (dish.cuisine === 'Vegetarian'){
             return true;
         }
@@ -156,14 +155,24 @@ console.log('vegetarianFood from filterVegetarian', vegetarianFood)
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
 
+function userFavoriteCuisine(){
+    let favoriteTypeOfFood = prompt('What is your favorite cuisine?')
+    let results = dishes.filter(function(dish){
+        if (dish.cuisine === favoriteTypeOfFood){
+            return true;
+        }
+    })
+    return results
+}
 
+let favoriteCuisineDishes = userFavoriteCuisine();
+console.log('favoriteCuisineDishes from userFavoriteCuisine', favoriteCuisineDishes);
 
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
 function filterLargeItalian (){
-    let results;
-    results = dishes.filter(function(dish){
+    let results = dishes.filter(function(dish){
         if (dish.cuisine === 'Italian' & dish.servings > 5){
             return true;
         }
@@ -179,10 +188,9 @@ console.log('largeItalianDishes from filterLargeItalian', largeItalianDishes)
 //Filter
 
 function filterIdServingMatches (){
-    let results;
-    results = dishes.filter(function(dish){
+    let results = dishes.filter(function(dish){
         if (dish.id === dish.servings){
-            return true
+            return true;
         }
     })
     return results;
@@ -194,13 +202,28 @@ console.log('idServingMatchDishes from filterIdServingMatches', idServingMatchDi
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function filterEvenCountDishes(){
+    let results = dishes.filter(function(dish){
+        if (dish.servings%2 === 0){
+            return true;
+        }
+    })
+    return results;
+}
 
+
+let evenCountDishes = filterEvenCountDishes();
+console.log('evenCountDishes from filterEvenCountDishes', evenCountDishes);
 
 //6. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
 //Filter
 
+// function includesChickpea(){
+//     let results;
+//     results = 
+// }
 
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
