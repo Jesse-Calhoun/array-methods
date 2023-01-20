@@ -139,7 +139,7 @@ function filterExample(){
 //1. Create a function that will return all dishes with the cuisine type of "vegetarian"
 //Filter
 
-function problemOne(){
+function filterVegetarian(){
 
     let results;
     results = dishes.filter(function(dish){
@@ -152,7 +152,7 @@ function problemOne(){
     return results;
 }
 
-let vegetarianFood = problemOne();
+let vegetarianFood = filterVegetarian();
 console.log('vegetarianFood from problemOne', vegetarianFood)
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
@@ -163,6 +163,9 @@ console.log('vegetarianFood from problemOne', vegetarianFood)
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function filterLargeItalian (){
+    
+}
 
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
