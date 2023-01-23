@@ -304,4 +304,13 @@ console.log('combinedVegetarianAndName from combineVegetarianAndName', combinedV
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
+function getTotalServingCount(){
+    let results = dishes.reduce(function(total, dish, servings){
+        return total + dish.servings;
+    },0)
+    return results
+}
+
+let totalServings = getTotalServingCount()
+console.log('totalServings from getTotalServingCount', totalServings)
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
