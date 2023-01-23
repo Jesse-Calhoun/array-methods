@@ -297,6 +297,13 @@ console.log('combinedVegetarianAndName from combineVegetarianAndName', combinedV
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
 
+function removeDuplicates(array){
+    return array.filter((el, index) => array.indexOf(el) === index);
+}
+
+let cuisineOptions = removeDuplicates(cuisineTypes)
+console.log('cuisineOptions form removeDuplicates', cuisineOptions)
+
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
