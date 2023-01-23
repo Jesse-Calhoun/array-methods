@@ -301,13 +301,24 @@ function removeDuplicates(array){
     return array.filter((el, index) => array.indexOf(el) === index);
 }
 
-let cuisineOptions = removeDuplicates(cuisineTypes)
+let cuisineOptions = removeDuplicates(cuisineTypes);
 console.log('cuisineOptions form removeDuplicates', cuisineOptions)
 
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
 
+function findTomatoOrCheese(){
+    let results = dishes.filter(function(dish){
+        if(dish.ingredients.includes('tomato') || dish.ingredients.includes('cheese')){
+            return true;
+        }
+    })
+    return results
+}
+
+let tomatoOrCheeseDishes = findTomatoOrCheese();
+console.log('tomatoOrCheeseDishes from findTomatoOrCheese', tomatoOrCheeseDishes)
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
@@ -318,6 +329,6 @@ function getTotalServingCount(){
     return results
 }
 
-let totalServings = getTotalServingCount()
+let totalServings = getTotalServingCount();
 console.log('totalServings from getTotalServingCount', totalServings)
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
